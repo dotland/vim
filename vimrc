@@ -40,7 +40,6 @@ set wildmode=list:longest,full  " Command <Tab> completion, list matches, then l
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
-set guioptions-=T               " Remove the toolbar
 set nobackup                    " no backup - use git like a normal person
 set noswapfile                  " no swap file
 set splitbelow                  " horizontal windows always split below
@@ -277,7 +276,11 @@ let g:doxygen_enhanced_colour = 1
 let g:used_javascript_libs = 'jquery,angularjs'
 
 if has('gui_running')
-    set guifont=Inconsolata-dz\ for\ Powerline\ 12 " ~/.local/share/fonts
+    if has("mac")
+        set guifont=Inconsolata\ for\ Powerline:h14 " ~/.local/share/fonts
+    else
+        set guifont=Inconsolata\ for\ Powerline\ 12 " ~/.local/share/fonts
+    endif
 
     if &diff
         set lines=57   " set height of workspace in lines.
@@ -459,33 +462,33 @@ endfunction
     " }}}
 
     " {{{ kien/rainbow_parentheses.vim
-        let g:rbpt_colorpairs = [
-            \ ['blue',         '#FF6000'],
-            \ ['cyan',         '#00FFFF'],
-            \ ['darkmagenta',  '#CC00FF'],
-            \ ['yellow',       '#FFFF00'],
-            \ ['red',          '#FF0000'],
-            \ ['darkgreen',    '#00FF00'],
-            \ ['White',        '#c0c0c0'],
-            \ ['blue',         '#FF6000'],
-            \ ['cyan',         '#00FFFF'],
-            \ ['darkmagenta',  '#CC00FF'],
-            \ ['yellow',       '#FFFF00'],
-            \ ['red',          '#FF0000'],
-            \ ['darkgreen',    '#00FF00'],
-            \ ['White',        '#c0c0c0'],
-            \ ['blue',         '#FF6000'],
-            \ ['cyan',         '#00FFFF'],
-            \ ['darkmagenta',  '#CC00FF'],
-            \ ['yellow',       '#FFFF00'],
-            \ ['red',          '#FF0000'],
-            \ ['darkgreen',    '#00FF00'],
-            \ ['White',        '#c0c0c0'],
-        \ ]
-        au VimEnter * RainbowParenthesesToggle
-        au Syntax * RainbowParenthesesLoadRound
-        au Syntax * RainbowParenthesesLoadSquare
-        au Syntax * RainbowParenthesesLoadBraces
+        "let g:rbpt_colorpairs = [
+        "    \ ['blue',         '#FF6000'],
+        "    \ ['cyan',         '#00FFFF'],
+        "    \ ['darkmagenta',  '#CC00FF'],
+        "    \ ['yellow',       '#FFFF00'],
+        "    \ ['red',          '#FF0000'],
+        "    \ ['darkgreen',    '#00FF00'],
+        "    \ ['White',        '#c0c0c0'],
+        "    \ ['blue',         '#FF6000'],
+        "    \ ['cyan',         '#00FFFF'],
+        "    \ ['darkmagenta',  '#CC00FF'],
+        "    \ ['yellow',       '#FFFF00'],
+        "    \ ['red',          '#FF0000'],
+        "    \ ['darkgreen',    '#00FF00'],
+        "    \ ['White',        '#c0c0c0'],
+        "    \ ['blue',         '#FF6000'],
+        "    \ ['cyan',         '#00FFFF'],
+        "    \ ['darkmagenta',  '#CC00FF'],
+        "    \ ['yellow',       '#FFFF00'],
+        "    \ ['red',          '#FF0000'],
+        "    \ ['darkgreen',    '#00FF00'],
+        "    \ ['White',        '#c0c0c0'],
+        "\ ]
+        "au VimEnter * RainbowParenthesesToggle
+        "au Syntax * RainbowParenthesesLoadRound
+        "au Syntax * RainbowParenthesesLoadSquare
+        "au Syntax * RainbowParenthesesLoadBraces
     " }}}
 
     " {{{ godlygeek/tabular
@@ -532,8 +535,8 @@ endfunction
     " {{{ scrooloose/syntastic
         let g:syntastic_always_populate_loc_list = 1
         let g:syntastic_auto_loc_list            = 0
-        let g:syntastic_check_on_wq              = 1
-        let g:syntastic_check_on_open            = 1
+        let g:syntastic_check_on_wq              = 0
+        let g:syntastic_check_on_open            = 0
         let g:syntastic_javascript_checkers      = ['standard']
     " }}}
 

@@ -3,3 +3,6 @@
 bundle/*
 sessions/*
 session/*
+tmp/backup/*
+tmp/swap/*
+tmp/undo/*

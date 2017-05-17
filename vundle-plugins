@@ -22,7 +22,7 @@ Plugin 'tacahiroy/ctrlp-funky'
 " Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'motanelu/php-snippets'
+"Plugin 'motanelu/php-snippets'
 
 " Client-side Javascript, CSS, templates
 Plugin 'ternjs/tern_for_vim'
@@ -53,7 +53,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-repeat'
 Plugin 'matze/vim-move'
 "Plugin 'valloric/youcompleteme'
-Plugin 'kien/rainbow_parentheses.vim'
+"Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'joonty/vdebug'
 Plugin 'dhruvasagar/vim-table-mode'
