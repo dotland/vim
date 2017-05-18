@@ -87,7 +87,10 @@ else
     set listchars=tab:>.,trail:~,nbsp:.,extends:>,precedes:<
 endif
 
-inoremap <C-BS> <C-w>
+if !has("mac")
+    inoremap <C-BS> <C-w>
+endif
+" else use Alt + delete
 
 if version >= 703
     set relativenumber
@@ -114,15 +117,13 @@ set undofile
 set history=1000
 set undolevels=100
 
+
+" Remap the leader to something more comfortable
+let mapleader=","
+
 " Tagbar
 let g:tagbar_left = 0
 let g:tagbar_sort = 0
-
-" WINDOWS
-nmap <Leader>j <C-w>j
-nmap <Leader>k <C-w>k
-nmap <Leader>h <C-w>h
-nmap <Leader>l <C-w>l
 
 " FOLDING
 map <Leader>- zc
@@ -142,10 +143,6 @@ noremap <CR> :
 set spell spelllang=en_us
 set nospell
 noremap <silent><C-s> :set spell! spell?<CR>
-
-" Navigating and opening tabs
-noremap <C-Left> <Esc>:tabprev<CR>
-noremap <C-Right> <Esc>:tabnext<CR>
 
 if has('gui_running')
     set foldlevel=99
@@ -284,7 +281,7 @@ if has('gui_running')
 
     if &diff
         set lines=57   " set height of workspace in lines.
-        let &columns = 178 + 2 * &foldcolumn + 1
+        let &columns = 198 + 2 * &foldcolumn + 1
     else
         set lines=53   " set height of workspace in lines.
         set columns=140 " set width of workspace in columns.
@@ -413,12 +410,6 @@ endfunction
 
     " need sudo?
     cmap w!! w !sudo tee % >/dev/null
-
-    " reset the search
-    nmap <silent> ,/ :nohlsearch<CR>
-
-    " Remap the leader to something more comfortable
-    let mapleader="\\"
 
     nmap <leader>t :TagbarToggle<CR>     " toggle tagbar - Plugin: majutsushi/tagbar
     nmap <leader>r :UndotreeToggle<cr>   " toggle undotree - Plugin: mbbill/undotree
