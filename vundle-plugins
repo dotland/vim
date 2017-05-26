@@ -20,7 +20,7 @@ Plugin 'tacahiroy/ctrlp-funky'
 "Plugin 'mkusher/padawan.vim'
 
 " Snippets
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 "Plugin 'motanelu/php-snippets'
 

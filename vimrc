@@ -494,10 +494,10 @@ endfunction
     " }}}
 
     " {{{ SirVer/ultisnips
-        let g:UltiSnipsExpandTrigger       = "<C-l>"
-        let g:UltiSnipsJumpForwardTrigger  = "<C-l>"
-        let g:UltiSnipsJumpBackwardTrigger = "<C-z>"
-        let g:UltiSnipsEditSplit           = "vertical"
+    "    let g:UltiSnipsExpandTrigger       = "<C-l>"
+    "    let g:UltiSnipsJumpForwardTrigger  = "<C-l>"
+    "    let g:UltiSnipsJumpBackwardTrigger = "<C-z>"
+    "    let g:UltiSnipsEditSplit           = "vertical"
     " }}}
 
     " {{{ joonty/vdebug
