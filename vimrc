@@ -166,7 +166,7 @@ set guioptions-=L  "remove Taglist scroll bar
 
 "" NERDTree
 if has('gui_running')
-    nmap <leader>n :NERDTreeToggle<CR>:set columns=180<CR>
+    nmap <leader>n :NERDTreeToggle<CR>:set columns=220<CR>
 else
     nmap <leader>n :NERDTreeToggle<CR>
 endif
@@ -284,12 +284,14 @@ if has('gui_running')
         let &columns = 198 + 2 * &foldcolumn + 1
     else
         set lines=53   " set height of workspace in lines.
-        set columns=140 " set width of workspace in columns.
+        set columns=160 " set width of workspace in columns.
     endif
 
-    nnoremap <F12> :TagbarToggle<CR>:set columns=180<CR>
+    nmap <leader>t :TagbarToggle<CR>:set columns=190<CR>    " toggle tagbar - Plugin: majutsushi/tagbar
+    nmap <leader>r :UndotreeToggle<CR>:set columns=190<CR>   " toggle undotree - Plugin: mbbill/undotree
 else
-    nnoremap <F12> :TagbarToggle<CR>
+    nmap <leader>t :TagbarToggle<CR>
+    nmap <leader>r :UndotreeToggle<CR>
 endif
 
 nnoremap <leader>hh :call clearmatches()<CR>:noh<CR>
@@ -412,9 +414,6 @@ endfunction
 
     " need sudo?
     cmap w!! w !sudo tee % >/dev/null
-
-    nmap <leader>t :TagbarToggle<CR>     " toggle tagbar - Plugin: majutsushi/tagbar
-    nmap <leader>r :UndotreeToggle<cr>   " toggle undotree - Plugin: mbbill/undotree
 
     " select last pasted text
     nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
