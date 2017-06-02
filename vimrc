@@ -362,6 +362,8 @@ endfunction
     autocmd BufRead,BufNewFile .htaccess    setfiletype apache "htaccess files
     autocmd BufRead,BufNewFile *inc         setfiletype php "PHP include files
     autocmd BufRead,BufNewFile *handlebars  setfiletype html "handlebars templates
+    autocmd BufRead,BufNewFile *.out,*.out.*,*.log,*.log.*  set ft=log4j syntax=log4j
+    autocmd BufRead,BufNewFile *access.log* setf httplog
 
     " better autochdir
     autocmd BufEnter * silent! lcd %:p:h
